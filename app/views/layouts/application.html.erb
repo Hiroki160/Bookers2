@@ -10,11 +10,12 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+
+
 <body>
   <header>
     <% if user_signed_in? %>
-    
+
       <li>
         <%= link_to "Bookers", root_path %>
       </li>
@@ -23,7 +24,7 @@
       </li>
 
       <li>
-        <%= link_to "Users", new_user_session_path %>
+        <%= link_to "Users", users_path %>
 
       </li>
       <li>
@@ -34,11 +35,11 @@
         <%= link_to "Log out", destroy_user_session_path, method: :delete %>
       </li>
     <% else %>
-    
+
       <li>
         <%= link_to "Bookers", root_path %>
       </li>
-      
+
       <li>
         <%= link_to "Home", root_path %>
       </li>

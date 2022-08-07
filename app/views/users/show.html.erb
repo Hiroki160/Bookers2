@@ -1,12 +1,17 @@
-<% flash.each do |key, value| %>
-  <p class = "alert alert-<%= key %>">
-    <%= value %>
-  </p>
-<% end %>
+  <body>
+    <% flash.each do |key, value| %>
+      <%= content_tag(:div, value, class: "#{key}") %>
+    <% end %>
+  </body>
 
-<%= render 'list', book: @book %>
+
+<%= render 'list', user: @user %>
+<%= render 'books/list', book: @book %>
+
 
 <!--ユーザーの投稿情報の記述-->
+
+
 <h1>Books</h1>
 
 <% @books.each do |book| %>
