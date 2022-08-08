@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
-  
+
   before_action :correct_user, only: [:edit, :update]
-  
-  
+
+
   def show
     @user = User.find(params[:id])
     @books = @user.books
@@ -12,6 +12,7 @@ class UsersController < ApplicationController
   def index
     @users = User.all
     @user = current_user
+    @book = Book.new
   end
 
   def edit
@@ -35,7 +36,7 @@ end
   def user_params
     params.require(:user).permit(:name, :profile_image, :introduction)
   end
-  
+
   def correct_user
     @book = Book.find(params[:id])
     @user = @book.user

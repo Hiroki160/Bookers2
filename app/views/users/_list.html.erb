@@ -1,11 +1,9 @@
 <div>
   <h1>User info</h1>
-  <%= image_tag @user.get_profile_image(100,100) %>
-  <% if @user == current_user %>
-    <h3>Name <%= @user.name %></h3>
-  <h3>Introduction <%= @user.introduction %></h3>
-    <p><%= link_to "edit", edit_user_path(@user) %></p>
-    <% end %>
+  <%= image_tag user.get_profile_image(100,100) %>
+    <h3>Name <%= user.name %></h3>
+  <h3>Introduction <%= user.introduction %></h3>
+    <p><%= link_to "edit", edit_user_path(user) %></p>
 
 
 </div>
